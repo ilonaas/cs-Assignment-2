@@ -14,11 +14,13 @@
 
         <StackPanel Margin=" 0 0 10 0">
             <TextBlock Text="Förnamn" />
-            <TextBox x:Name="tb_FirstName"/>
+            <TextBox x:Name="tb_FirstName" Padding="3"/>
+           
             <TextBlock Text="Efternamn" Margin="0 8 0 0"/>
-            <TextBox x:Name="tb_LastName"/>
+            <TextBox x:Name="tb_LastName" Padding="3"/>
+            
             <TextBlock Text="E-postadress" Margin="0 8 0 0" />
-            <TextBox x:Name="tb_Email"/>
+            <TextBox x:Name="tb_Email" Padding="3" />
             
             <Grid Margin="0 8 0 0">
                 <Grid.ColumnDefinitions>
@@ -29,26 +31,56 @@
 
                 <StackPanel Grid.Column="0">
                     <TextBlock Text="Gatuadress" />
-                    <TextBox x:Name="tb_StreetName" />
+                    <TextBox x:Name="tb_StreetName" Padding="3" />
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="10 0 10 0">
                     <TextBlock Text="Postnummer" />
-                    <TextBox x:Name="tb_PostalCode" />
+                    <TextBox x:Name="tb_PostalCode" Padding="3" />
                 </StackPanel>
 
                 <StackPanel Grid.Column="2">
                     <TextBlock Text="Ort" />
-                    <TextBox x:Name="tb_City" />
+                    <TextBox x:Name="tb_City" Padding="3" />
                 </StackPanel>
 
             </Grid>
+            
+            <Button x:Name="btn_Add"
+                    Click="btn_Add_Click"
+                    Padding="30 8"
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Bottom"                
+                    Margin="10" 
+                    Content="Lägg till" />
+            
         </StackPanel>
 
 
-        <ListView Grid.Column="1">
+        <ListView x:Name="lv_Contacts" SelectionChanged="lv_Contacts_SelectionChanged" Grid.Column="1" Margin="20" HorizontalContentAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" VerticalAlignment="=Center">
+                            <TextBlock Text="{Binding FullName}" />
+                            <TextBlock Text="{Binding Email}" FontSize="10"/>
+                        </StackPanel>
+                       
+                        
+                       
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
         </ListView>
+        
+        
+
 
     </Grid>
 </Window>

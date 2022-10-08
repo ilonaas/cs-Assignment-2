@@ -23,6 +23,18 @@ namespace Assignment_2
         public MainWindow()
         {
             InitializeComponent();
+
+            UpdateProductCatalog();
+        }
+
+        private void UpdateProductCatalog()
+        {
+           
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }
