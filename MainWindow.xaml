@@ -71,6 +71,16 @@
                             <TextBlock Text="{Binding Email}" FontSize="10"/>
                         </StackPanel>
                        
+                        <Button 
+                            Click="btn_Remove_Click"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Grid.Column="1" 
+                            FontFamily="Segoe MDL2 Assets" 
+                            Content="&#xE74D;" />
+                        
                         
                        
                     </Grid>
@@ -79,8 +89,6 @@
 
         </ListView>
         
-        
-
-
     </Grid>
+    
 </Window>
