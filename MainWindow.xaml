@@ -53,11 +53,12 @@
                     VerticalAlignment="Bottom"                
                     Margin="10" 
                     Content="Lägg till" />
-            
+
+
         </StackPanel>
 
 
-        <ListView x:Name="lv_Contacts" SelectionChanged="lv_Contacts_SelectionChanged" Grid.Column="1" Margin="20" HorizontalContentAlignment="Stretch">
+        <ListView x:Name="lv_Contacts" SelectionChanged="lv_Contacts_SelectionChanged"  Grid.Column="1" Margin="10,10,10,10" HorizontalContentAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -66,11 +67,11 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <StackPanel Grid.Column="0" VerticalAlignment="=Center">
+                        <StackPanel Grid.Column="0">
                             <TextBlock Text="{Binding FullName}" />
                             <TextBlock Text="{Binding Email}" FontSize="10"/>
                         </StackPanel>
-                       
+
                         <Button 
                             Click="btn_Remove_Click"
                             Background="Transparent"
@@ -80,13 +81,10 @@
                             Grid.Column="1" 
                             FontFamily="Segoe MDL2 Assets" 
                             Content="&#xE74D;" />
-                        
-                        
-                       
+
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
         </ListView>
         
     </Grid>
